@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midolorian</title>
+    <link rel="icon" type="image/png" href="Images/Miyamura.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Sorting Visualizer</h1>
+        <nav>
+            <div class="algorithms" >
+                <label for="arraySize">Array Size: <span id="arraySizeValue">20</span></label>
+                <input type="range" id="arraySize" min="20" max="100" step="20" value="20">
+                <button class="algoButton" onclick="init()">Create Array</button>
+                <button onclick="playBubbleSort()" class="algoButton">Bubble</button>
+                <button class="algoButton">Selection</button>
+                <button class="algoButton">Insertion</button>
+            </div>
+        </nav>
+    </header>
+    <div id="container"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
