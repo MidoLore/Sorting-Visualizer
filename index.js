@@ -2,6 +2,12 @@ let n = 20; //Size of array
 let array = [];
 const min = 5; //Min element in array
 const max = 100; //Max element in array
+let bar;
+
+const createArrayButton = document.getElementById('createArrayButton');
+const bubbleButton = document.getElementById('bubbleButton');
+const selectionButton = document.getElementById('selectionButton');
+const slider = document.getElementById('arraySize');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,6 +28,7 @@ function init() {
     }
     showBars();
 }
+
 
 function showBars(indices = [], swapIndices = [], finalIndices = []) {
     container.innerHTML = '';
@@ -64,15 +71,31 @@ function animate(swaps) {
             showBars(indices); 
         }
     }
-
-    
-    setTimeout(() => animate(swaps), 200);
+    setTimeout(() => animate(swaps), 10);
 }
 
 function playBubbleSort() {
     disableButtons();
     const swaps = bubbleSort([...array]);
     animate(swaps);
+}
+
+function playSelectionSort() {
+    disableButtons();
+    const swaps = selectionSort([...array]);
+    animate(swaps);
+}
+
+function playInsertionSort(){
+    disableButtons()
+    const swaps = insertionSort([...array]);
+    animate(swaps)
+}
+
+function playMergeSort(){
+    disableButtons()
+    const swaps = mergeSort([...array])
+    animate(swaps)
 }
 
 function bubbleSort(array) {
@@ -88,6 +111,48 @@ function bubbleSort(array) {
         swaps.push({ final: true, index: array.length - i - 1 });
     }
     return swaps;
+}
+
+function selectionSort(array) {
+    const swaps = [];
+    for (let i = 0; i < array.length - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < array.length; j++) {
+            swaps.push({ indices: [minIndex, j], swap: false });
+            if (array[j] < array[minIndex]) {
+                minIndex = j;
+            }
+        }
+        if (minIndex !== i) {
+            [array[i], array[minIndex]] = [array[minIndex], array[i]];
+            swaps.push({ indices: [i, minIndex], swap: true });
+        }
+        swaps.push({ final: true, index: i });
+    }
+    swaps.push({ final: true, index: array.length - 1 });
+    return swaps;
+}
+
+
+function insertionSort(array){
+    const swaps = [];
+    for (let i = 1; i < array.length; i++){
+        let j = i;
+         while (j > 0 && array[j-1] > array[j]){
+            [array[j-1], array[j]] = [array[j], array[j-1]];
+            swaps.push({ indices: [j-1, j], swap: true });
+            j--;
+        }
+    }
+    swaps.push({ final: true, index: array.length - 1 });
+    return swaps;
+}
+
+function mergeSort(array) {
+
+}
+
+function merge(leftArray, rightArray, array) {
 }
 
 function disableButtons() {

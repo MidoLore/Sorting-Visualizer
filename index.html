@@ -13,11 +13,11 @@
         <nav>
             <div class="algorithms" >
                 <label for="arraySize">Array Size: <span id="arraySizeValue">20</span></label>
-                <input type="range" id="arraySize" min="20" max="100" step="20" value="20">
-                <button class="algoButton" onclick="init()">Create Array</button>
-                <button onclick="playBubbleSort()" class="algoButton">Bubble</button>
-                <button class="algoButton">Selection</button>
-                <button class="algoButton">Insertion</button>
+                <input type="range" id="arraySize" min="20" max="140" step="20" value="20">
+                <button id="createArrayButton" class="algoButton" onclick="init()">Generate new Array</button><br>
+                <button id="bubbleButton" class="algoButton" onclick="playBubbleSort()">Bubble</button>
+                <button id="selectionButton" class="algoButton" onclick="playSelectionSort()">Selection</button>
+                <button id="insertionButton" class="algoButton" onclick="playInsertionSort()">Insertion</button>
             </div>
         </nav>
     </header>

@@ -1,7 +1,7 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(236, 236, 236);
-    
+    background-color: white;
     flex-direction: column;
     display: flex;
 
@@ -18,6 +18,9 @@ body{
     align-items: flex-end;
     align-self: center;
     text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 80%;
 }
 
 .bar{
@@ -44,7 +47,7 @@ body{
     background-color: rgb(48, 48, 48);;
 }
 .bar .label {
-    bottom: 100%; /* Position above the bar */
+    bottom: 100%; 
     color: white;
     font-size: 10px;
     white-space: nowrap;
