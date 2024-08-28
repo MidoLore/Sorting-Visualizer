@@ -7,6 +7,7 @@ let bar;
 const createArrayButton = document.getElementById('createArrayButton');
 const bubbleButton = document.getElementById('bubbleButton');
 const selectionButton = document.getElementById('selectionButton');
+const insertionButton = document.getElementById('insertionButton');
 const slider = document.getElementById('arraySize');
 
 
@@ -159,6 +160,7 @@ function disableButtons() {
     createArrayButton.disabled = true;
     bubbleButton.disabled = true;
     selectionButton.disabled = true;
+    insertionButton.disabled = true;
     slider.disabled = true;
 }
 
@@ -166,5 +168,6 @@ function enableButtons() {
     createArrayButton.disabled = false;
     bubbleButton.disabled = false;
     selectionButton.disabled = false;
+    insertionButton.disabled = false;
     slider.disabled = false;
 }
